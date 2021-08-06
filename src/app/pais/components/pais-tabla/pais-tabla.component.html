@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr >
+      <th>#</th>
+      <th>Bandera</th>
+      <th>Nombre</th>
+      <th>Poblacion</th>
+      <th>L</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of paises; let i = index">
+      <td>{{i +1}}</td>
+      <td><img [src]="item.flag" alt="" class="small-flag"></td>
+      <td>{{item.capital}} , {{item.name}}</td>
+      <td>{{item.population | number}}</td>
+      <td>
+        <a [routerLink]="['/pais', item.alpha2Code]">{{item.alpha2Code}}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
